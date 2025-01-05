@@ -1,9 +1,7 @@
 name: 🌈 Release
 on:
   push:
-    tags:
-      - '\d+.\d+.\d+-\d+.\d+.\d+'
-
+    branches: "*"
 # Global Settings
 env:
   PROJECT_FOLDER: fmod-gdextension
