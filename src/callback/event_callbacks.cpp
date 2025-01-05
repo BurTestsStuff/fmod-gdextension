@@ -50,6 +50,11 @@ namespace Callbacks {
                 dictionary["time_signature_upper"] = props->timesignatureupper;
                 dictionary["time_signature_lower"] = props->timesignaturelower;
                 dictionary["position"] = props->position;
+            } else if (type == FMOD_STUDIO_EVENT_CALLBACK_SOUND_PLAYED) {
+                auto* props { reinterpret_cast<FMOD_STUDIO_SOUND_PROPERTIES*>(parameters) };
+                dictionary["sound"] = props->sound;
+                dictionary["position"] = props->position;
+                dictionary["debug"] = props;
             }
             const godot::Callable& callback {event_instance->get_callback()};
             if (!callback.is_null() && callback.is_valid()) {
@@ -65,4 +70,4 @@ namespace Callbacks {
 
         return FMOD_OK;
     }
-}// namespace Callbacks
+}
