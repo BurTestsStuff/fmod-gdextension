@@ -53,7 +53,6 @@ namespace Callbacks {
             } else if (type == FMOD_STUDIO_EVENT_CALLBACK_SOUND_PLAYED) {
                 auto* props { reinterpret_cast<FMOD_STUDIO_PROGRAMMER_SOUND_PROPERTIES*>(parameters) };
                 dictionary["sound"] = props->sound;
-                dictionary["position"] = props->position;
                 dictionary["debug"] = props;
                 dictionary["d2"] = parameters;
             }
