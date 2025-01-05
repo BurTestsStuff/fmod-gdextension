@@ -2,6 +2,7 @@ import requests
 import sys
 
 argv = sys.argv[1:] 
+print(argv)
 
 user = argv[0]
 password = argv[1]
